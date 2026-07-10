@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>حاسبة بلوت: قيد النشرة والصكة — Baloot Score Counter</title>
+<meta name="description" content="سجّل نشرة البلوت بعداد فاخر — قيد سريع بصوت واهتزاز، يعمل بدون إنترنت. Premium Baloot scorekeeper: a clicky dial, haptics, works offline.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: radial-gradient(120% 90% at 50% 0%, #15191D 0%, #0E1216 55%, #090C0F 100%) fixed #0E1216;
+    color: #E6E1D5;
+    font-family: 'Noto Naskh Arabic', 'Segoe UI', Tahoma, serif;
+    line-height: 1.9;
+  }
+  a { color: #D9BE6E; text-decoration: none; border-bottom: 1px solid #4A4230; }
+  a:hover { color: #F2E2A8; border-bottom-color: #8A8172; }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 72px 24px 64px; display: flex; flex-direction: column; gap: 56px; }
+  .label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #7E8894; border-bottom: 1px solid #1E242B; padding-bottom: 10px; direction: ltr; text-align: right; }
+  .en { direction: ltr; text-align: left; font-family: 'Newsreader', Georgia, serif; }
+  .en .label { text-align: left; }
+  .muted { color: #97A0AB; }
+  .knob { width: 132px; height: 132px; border-radius: 50%; position: relative; flex: none;
+    background: radial-gradient(135% 135% at 35% 31%, #5B5F66 0%, #2A2C30 38%, #141518 72%, #060607 100%);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.55), 0 0 0 3px #0B0E11, 0 0 0 4px #2A2C30; }
+  .knob i { position: absolute; left: 50%; top: 50%; width: 53px; height: 53px; transform: translate(-50%,-50%); border-radius: 50%;
+    background: radial-gradient(120% 120% at 35% 32%, #FBEFC8 0%, #F6EFD8 100%); }
+  .knob i::after { content: ''; position: absolute; left: 22%; top: 18%; width: 12px; height: 12px; border-radius: 50%; background: #FFF; opacity: 0.55; filter: blur(1.5px); }
+  ul.features { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 17px; color: #C9CDD2; }
+  ul.features li::before { content: '•'; color: #D9BE6E; margin-left: 10px; }
+  .shot { display: flex; flex-direction: column; gap: 8px; flex: none; width: 200px; }
+  .shot img { width: 200px; border-radius: 18px; border: 1px solid #2A2F36; display: block; }
+  .shot span { font-size: 13.5px; color: #97A0AB; text-align: center; }
+  .badge { display: inline-flex; align-items: center; gap: 10px; border: 1px solid #3A3F46; border-radius: 8px; padding: 12px 22px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #D9BE6E; direction: ltr; border-bottom-width: 1px; }
+  .badge:hover { border-color: #8A8172; }
+  footer { border-top: 1px solid #1E242B; padding-top: 20px; display: flex; justify-content: space-between; align-items: center;
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #5E6873; direction: ltr; }
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <!-- hero -->
+  <header style="display:flex;flex-direction:column;gap:28px;align-items:flex-start;">
+    <div class="knob"><i></i></div>
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <h1 style="margin:0;font-size:36px;font-weight:700;line-height:1.5;">حاسبة بلوت: قيد النشرة والصكة</h1>
+      <div class="en" style="font-size:20px;color:#97A0AB;">Baloot Score Counter — Qayd</div>
+    </div>
+    <p style="margin:0;font-size:19px;line-height:2;color:#C9CDD2;">
+      حاسبة بلوت بإحساس مختلف: عدّاد ميكانيكي فاخر يقيّد نشرة البلوت بدل الورقة والقلم.
+      سجّل نشرة البلوت بعداد فاخر — قيد سريع بصوت واهتزاز، يعمل بدون إنترنت.
+    </p>
+    <a class="badge" href="#" title="قريبًا على Google Play">◈&nbsp;&nbsp;SOON ON GOOGLE PLAY</a>
+  </header>
+
+  <!-- about -->
+  <section style="display:flex;flex-direction:column;gap:20px;">
+    <div class="label">عن التطبيق</div>
+    <p style="margin:0;font-size:17px;color:#C9CDD2;">
+      ودّع القلم والدفتر. «بلوت» حاسبة بلوت مصنوعة كقطعة فاخرة تليق بالجلسة: قرص أسود لامع
+      بنقطة نحاسية دافئة، تدوّره فيرتفع الرقم مع «طقّة» تروس واهتزاز خفيف لكل نقطة، تسحبه
+      يمينًا أو يسارًا لتقسيم النقاط بين «لنا» و«لهم»، وترفع إصبعك فتُسجَّل الجولة في النشرة.
+      أرقام تتدحرج أمامك مثل عدّاد السيارة، وحساب الصكة يمشي معك جولة بجولة حتى صيحة الفوز.
+    </p>
+  </section>
+
+  <!-- features -->
+  <section style="display:flex;flex-direction:column;gap:20px;">
+    <div class="label">المميزات</div>
+    <ul class="features">
+      <li>قرص دوّار بإحساس ميكانيكي حقيقي: صوت تروس واهتزاز مع كل رقم</li>
+      <li>أرقام تنقلب مثل عدّاد الكيلومترات — متعة تشوفها كل جولة</li>
+      <li>حركة واحدة لتقسيم نقاط الجولة بين لنا ولهم</li>
+      <li>اختيارات سريعة للنتائج الشائعة: 16 و26 و32 و44</li>
+      <li>تعديل أو حذف أي جولة من النشرة في أي وقت</li>
+      <li>أهداف الصكة كما تحب: 102 أو 152 أو 201</li>
+      <li>احتفال بالفريق الفائز عند اكتمال الصكة</li>
+      <li>وضع ليلي مريح لسهرات المجلس ووضع نهاري صافٍ</li>
+      <li>أرقام هندية (١٢٣) أو لاتينية (123) — اختر ما تعوّدت عليه</li>
+      <li>يعمل بدون إنترنت، بدون حساب، وبدون تسجيل دخول</li>
+      <li>كل ما يخص القيد وحساب نقاط البلوت مجاني بالكامل، اليوم وللأبد</li>
+    </ul>
+  </section>
+
+  <!-- screenshots -->
+  <section style="display:flex;flex-direction:column;gap:20px;">
+    <div class="label">لقطات الشاشة</div>
+    <div style="display:flex;gap:16px;overflow-x:auto;padding-bottom:8px;">
+      <div class="shot"><img src="img/store_01_dark_hero.png" alt="لوحة القيد — المظهر الداكن"><span>ودّع الورقة والقلم</span></div>
+      <div class="shot"><img src="img/store_02_jog_track.png" alt="مسار التسجيل السريع"><span>دوّر… واسمع الطقّة</span></div>
+      <div class="shot"><img src="img/store_03_split.png" alt="تقسيم النقاط"><span>اسحب وقسّم لنا ولهم</span></div>
+      <div class="shot"><img src="img/store_04_skins_dark.png" alt="أطقم الألوان"><span>ألوان تقتنيها للأبد</span></div>
+      <div class="shot"><img src="img/store_05_light_board.png" alt="المظهر الفاتح"><span>وضع نهاري… نفس الفخامة</span></div>
+      <div class="shot"><img src="img/store_06_settings_light.png" alt="الإعدادات"><span>كل شيء على كيفك</span></div>
+      <div class="shot"><img src="img/store_07_winner.png" alt="شاشة الفوز"><span>احتفال يليق بالفائز</span></div>
+    </div>
+  </section>
+
+  <!-- colourways + ad promise -->
+  <section style="display:flex;flex-direction:column;gap:20px;">
+    <div class="label">ألوان القرص · وعدنا في الإعلانات</div>
+    <p style="margin:0;font-size:16.5px;color:#C9CDD2;">
+      اللون النحاسي الافتراضي مجاني للجميع. وتقدر تقتني ألوانًا إضافية تشتريها مرة واحدة
+      وتملكها للأبد: أزرق الرياض، ذهبي الرياض، أبيض وأحمر، أخضر جدة، أسود وأصفر —
+      وباقة «ملحمة» تفتح كل الألوان دفعة واحدة وتزيل الإعلان نهائيًا.
+    </p>
+    <p style="margin:0;font-size:16.5px;color:#C9CDD2;">
+      لا إعلانات بانر، ولا إعلانات تقاطعك أثناء اللعب — أبدًا. يوجد إعلان واحد اختياري فقط:
+      إذا حبيت تجرّب لونًا مقفلًا خلال صكتك الحالية، تشاهده بقرارك. لا شيء يفرض عليك.
+    </p>
+  </section>
+
+  <!-- EN summary -->
+  <section class="en" style="display:flex;flex-direction:column;gap:20px;border-top:1px solid #2E2A20;padding-top:40px;">
+    <div class="label">BALOOT SCORE COUNTER — ENGLISH</div>
+    <p style="margin:0;font-size:17px;line-height:1.75;color:#C9CDD2;">
+      A Baloot score counter with a soul: a precision-machined dial that replaces pen and paper.
+      Jog the glossy black knob and feel every point land with a gear click and a soft haptic
+      tick. Slide it sideways to split the round between Us and Them, release, and the round is
+      recorded. Works fully offline — no account, no sign-up. Everything you need to keep score
+      is free, forever.
+    </p>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:12.5px;">
+      <a href="privacy.html">Privacy Policy — سياسة الخصوصية</a>
+      <a href="mailto:nhgamdi@gmail.com">nhgamdi@gmail.com</a>
+    </div>
+  </section>
+
+  <footer>
+    <span>© Nasser Alghamdi · nhgamdi.netlify.app</span>
+    <span>com.baloot.scoreboard</span>
+  </footer>
+</main>
+</body>
+</html>
